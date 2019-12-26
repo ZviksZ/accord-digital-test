@@ -1,0 +1,237 @@
+@import "vars"
+@import "fonts"
+@import "libs"
+
+::placeholder
+  color: #666
+
+::selection
+  background-color: $accent
+  color: #fff
+
+body
+  font-size: 16px
+  min-width: 320px
+  position: relative
+  line-height: 1.65
+  font-family: $default-font
+  overflow-x: hidden
+  color: $text
+  font-weight: 500
+  
+  input, textarea
+    border: #666 1px solid
+    outline: none
+    
+    &:focus:required:invalid
+      border-color: red
+    
+    &:required:valid
+      border-color: green
+
+.img-responsive
+  display: block
+  max-width: 100%
+  height: auto
+  
+  &.img-width
+    width: 100%
+
+.text-center
+  text-align: center
+
+b, strong
+  font-weight: bold
+
+
+/*-------------HEADER----------------*/      
+  
+.header
+  background: #f7d14c
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  position: relative
+  &__logo
+    width: 30%
+    color: black
+    font-size: 50px
+    font-weight: 700
+    line-height: 54px
+    padding: 40px 0 38px 6%
+    &:hover
+      text-decoration: none
+      color: black  
+  &__menu
+    margin-left: auto
+    ul
+      display: flex
+      justify-content: flex-end      
+      margin-bottom: 0
+      .header__menu-item
+        list-style: none
+        margin-right: 3%  
+        a
+          color: black
+          font-size: 27px
+          font-weight: 700
+          line-height: 29px
+          text-transform: lowercase
+          border-bottom: 22px solid transparent
+          padding: 0 5px 32px
+          -webkit-transition: all 0.5s linear
+          -moz-transition: all 0.5s linear
+          -o-transition: all 0.5s linear
+          transition: all 0.5s linear
+          &:hover
+            text-decoration: none
+        a.active
+          border-bottom: 22px solid #fff
+        a.header__menu-strong
+          font-weight: 900
+          
+          
+.locked 
+  outline: hidden
+.nav_burger
+  display: none
+  position: fixed
+  right: 40px
+  top: 55px
+  cursor: pointer
+  background: #111
+  box-sizing: border-box
+  background-clip: content-box
+  width: 40px
+  height: 25px
+  border-top: 11px solid transparent
+  border-bottom: 11px solid transparent
+  -webkit-transform: rotate(0deg)
+  transform: rotate(0deg)
+  -webkit-transition: all 0.25s ease-in-out
+  transition: all 0.25s ease-in-out  
+  &:before,
+  &:after
+    content: ""
+    position: absolute
+    background: #111
+    height: 3px
+    width: 100%
+    right: 0
+    will-change: rotate
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    -webkit-transition: all 0.5s ease
+    transition: all 0.5s ease
+  
+  &:before
+    top: -10px
+  
+  &:after
+    bottom: -10px
+    width: 90%
+  
+  &.active
+    background: transparent
+    background-clip: content-box
+  
+  &.active:before
+    -webkit-transform: rotate(135deg)
+    transform: rotate(135deg)
+    top: 0
+    background: #333
+    width: 110%
+  
+  &.active:after
+    bottom: 0
+    -webkit-transform: rotate(-135deg)
+    transform: rotate(-135deg)
+    background: #333
+    width: 110%
+
+
+
+@keyframes fadeInRight
+  0%
+    opacity: 0
+    left: 50px
+  
+  100%
+    opacity: 1
+    left: 0
+    transform: rotate(0deg)
+    
+    
+    
+/*---------------MAIN---------------*/
+
+
+.main 
+  display: grid
+  grid-template-columns: repeat(8, 1fr)
+  grid-template-areas: "img img img img img info info info" 
+  &__img-wrap
+    grid-area: img
+    padding: 134px 0 210px 80px
+    .main__img
+      margin-right: -120px
+      img
+        width: 100%
+        height: auto
+        max-width: 100%
+    .main__img-text
+      width: 80%
+      padding-left: 80px
+      color: black
+      font-size: 20px
+      line-height: 23px
+      font-weight: 500
+      span
+        font-weight: 900
+  &__info
+    grid-area: info
+    padding-top: 300px
+    padding-right: 35px
+    &-title 
+      color: black
+      font-size: 50px
+      font-weight: 700
+      line-height: 54px
+    &-subtitle
+      display: inline-block
+      width: 73%
+      color: black
+      font-size: 20px
+      font-weight: 500
+      line-height: 23px
+      margin-bottom: 70px
+    &-stats
+      .item
+        width: 100%
+        position: relative
+        display: flex
+        justify-content: space-between
+        align-items: center
+        margin-bottom: 50px
+        p
+          color: black
+          font-size: 30px
+          font-weight: 700
+          line-height: 38px
+          width: 74%
+          padding-top: 20px
+          padding-right: 15px
+#main-left,
+#main-right
+  -webkit-transition: all 0.9s ease
+  transition: all 0.9s ease    
+.ml1000
+  margin-left: -100px
+  opacity: 0
+.mr1000
+  margin-right: -100px
+  opacity: 0
+    
+
+
+@import "media" 
