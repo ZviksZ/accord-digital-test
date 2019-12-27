@@ -47,7 +47,7 @@ b, strong
 /*-------------HEADER----------------*/      
   
 .header
-  background: #f7d14c
+  background: $accent
   display: flex
   justify-content: flex-start
   align-items: center
@@ -64,6 +64,7 @@ b, strong
       color: black  
   &__menu
     margin-left: auto
+    padding-right: 15px
     ul
       display: flex
       justify-content: flex-end      
@@ -221,17 +222,47 @@ b, strong
           width: 74%
           padding-top: 20px
           padding-right: 15px
-#main-left,
-#main-right
+          
+          
+.show-right,
+.show-top,
+.show-left
   -webkit-transition: all 0.9s ease
-  transition: all 0.9s ease    
-.ml1000
-  margin-left: -100px
-  opacity: 0
-.mr1000
-  margin-right: -100px
-  opacity: 0
-    
+  transition: all 0.9s ease  
+  animation-fill-mode: forwards
+  animation-delay: 1s
+.show-right
+  animation: show-right 3s 1
+.show-top
+  animation: show-top 2s 1
+.show-left
+  animation: show-left 3s 1
+
+
+@keyframes show-left
+  0%
+    opacity: 0
+    margin-left: -100px
+  100% 
+    opacity: 1
+    margin-left: 0
+@keyframes show-right
+  0%
+    opacity: 0
+    margin-right: -500px
+  100%
+    opacity: 1
+    margin-right: 0
+@keyframes show-top
+  0%
+    opacity: 0
+    margin-top: -100px
+  100%
+    opacity: 1
+    margin-top: 0
+
+
+
 
 
 @import "media" 

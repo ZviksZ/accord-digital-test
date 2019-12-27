@@ -13,11 +13,5 @@ $(function() {
       $(this).addClass('active')
    }).on('mouseleave', function () {
       $('.header__menu-item a').removeClass('active').first().addClass('active')
-   })
-   
-   /* animation on block appear*/   
-   $(window).on("load", function() {
-      $("#main-right").removeClass('mr1000')
-      $("#main-left").removeClass('ml1000')     
-   });  
+   }) 
 });
