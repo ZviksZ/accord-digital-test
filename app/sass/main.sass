@@ -94,7 +94,9 @@ b, strong
           
 .locked 
   outline: hidden
-.nav_burger
+#burger__input
+  display: none
+.burger__label
   display: none
   position: fixed
   right: 40px
@@ -123,7 +125,7 @@ b, strong
     -webkit-transform: rotate(0deg)
     transform: rotate(0deg)
     -webkit-transition: all 0.5s ease
-    transition: all 0.5s ease
+    transition: all 0.5s ease   
   
   &:before
     top: -10px
@@ -132,23 +134,23 @@ b, strong
     bottom: -10px
     width: 90%
   
-  &.active
-    background: transparent
-    background-clip: content-box
-  
-  &.active:before
-    -webkit-transform: rotate(135deg)
-    transform: rotate(135deg)
-    top: 0
-    background: #333
-    width: 110%
-  
-  &.active:after
-    bottom: 0
-    -webkit-transform: rotate(-135deg)
-    transform: rotate(-135deg)
-    background: #333
-    width: 110%
+#burger__input:checked ~ .burger__label
+  background: transparent
+  background-clip: content-box
+
+#burger__input:checked ~ .burger__label:before
+  -webkit-transform: rotate(135deg)
+  transform: rotate(135deg)
+  top: 0
+  background: #333
+  width: 110%
+
+#burger__input:checked ~ .burger__label:after
+  bottom: 0
+  -webkit-transform: rotate(-135deg)
+  transform: rotate(-135deg)
+  background: #333
+  width: 110%
 
 
 

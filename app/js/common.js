@@ -1,11 +1,11 @@
 $(function() {
    
    /*  mobile menu toggle  */   
-   $("#navToggle").click(function() {
+  /* $("#navToggle").click(function() {
       $(this).toggleClass("active");
       $(".header__menu").toggleClass("open");
       $("body").toggleClass("locked");
-   });
+   });*/
    
    /* menu items bottom-border on hover */   
    $('.header__menu-item a').on('mouseenter', function () {
